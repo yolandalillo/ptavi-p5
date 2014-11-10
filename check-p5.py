@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 
 """
-Script de comprobación de entrega de práctica
+Script de comprobaciÃ³n de entrega de prÃ¡ctica
 
 Para ejecutarlo, desde la shell: 
  $ python check-p5.py login_laboratorio
@@ -14,7 +14,7 @@ import random
 import sys
 
 
-# Diccionario con la relación de nombres de usuario
+# Diccionario con la relaciÃ³n de nombres de usuario
 # en los laboratorios (clave) y nombres de usuario en GitHub (valor)
 github_dict = {
     "iarranz": "igarag",
@@ -71,6 +71,8 @@ aleatorio = str(int(random.random() * 1000000))
 
 error = 0
 
+repo_git = "http://github.com/" + github_dict[sys.argv[1]] + "/ptavi-p5/"
+
 print "Clonando el repositorio " + repo_git + "\n"
 os.system('git clone ' + repo_git + ' /tmp/' + aleatorio + ' > /dev/null 2>&1')
 try:
@@ -83,7 +85,7 @@ except OSError:
 
 if len(student_file_list) != len(files):
     error = 1
-    print "Error en el número de ficheros encontrados en el repositorio"
+    print "Error en el nÃºmero de ficheros encontrados en el repositorio"
 
 for filename in files:
     if filename not in student_file_list:
@@ -92,5 +94,5 @@ for filename in files:
 
 if not error:
     print "Parece que la entrega se ha realizado bien."
-    print "Recuerda que también tienes que realizar un test en Moodle."
+    print "Recuerda que tambiÃ©n tienes que realizar un test en Moodle."
     print
