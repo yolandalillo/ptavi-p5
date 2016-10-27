@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 # -*- coding: utf-8 -*-
 
 """
@@ -18,13 +18,12 @@ files = ['README.md',
          'LICENSE',
          'p5.txt',
          'sip.libpcap.gz',
-         'p5.libpcap',
-   	     'check-p5.py',
+         'p5.pcapng',
+	 'check-p5.py',
          '.git']
 
 
 if len(sys.argv) != 2:
-    print()
     sys.exit("Usage : $ python3 check-p5.py login_github")
 
 repo_git = "http://github.com/" + sys.argv[1] + "/ptavi-p5"
@@ -39,8 +38,8 @@ try:
     student_file_list = os.listdir('/tmp/' + aleatorio)
 except OSError:
     error = 1
-    print "Error: No se ha creado el repositorio git correctamente."
-    print
+    print("Error: No se ha creado el repositorio git correctamente.")
+    print()
     sys.exit()
 
 if len(student_file_list) != len(files):
