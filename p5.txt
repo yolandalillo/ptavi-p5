@@ -141,15 +141,23 @@ Contiene los valores de inicializacion en SDP.
 No tiene éxito porque no ha recibido 200 OK y entonces vuelve a intentarlo enviando INVITE.
 * ¿En qué se diferencia el segundo INVITE más abajo del primero?
 ¿A qué crees que se debe esto?
-La diferencai es que el campo Proxy-Authorization que aparece en el segundo INVITE. Esto se debe a que recibe 407: Proxy Authentication (paquete 85), quiere decir que necesita identificación.
+La diferencia es que el campo Proxy-Authorization que aparece en el segundo INVITE. Esto se debe a que recibe 407: Proxy Authentication (paquete 85), quiere decir que necesita identificación.
 
 11. Una vez conectado, estudia el intercambio de tramas.
 * ¿Qué protocolo(s) se utiliza(n)? ¿Para qué sirven estos protocolos?
+Utiliza RTP que es un protocolo no fiable, que sirve para la transmisión en tiempo real de audio en vídeo, también utiliza
+H.261 que comprime audio y vídeo.
 * ¿Cuál es el tamaño de paquete de los mismos?
+RTP tiene tamaño de 214 bytes sin embargo, H.261 va cambiando.
 * ¿Se utilizan bits de padding?
+No, ..0. .... = Padding: False
 * ¿Cuál es la periodicidad de los paquetes (en origen; nota que la
 captura es en destino)?
+Vemos que el Payload Type es G.711 PCMA que transmite 8000 muestras por segundo.El  timestamp es 160 por tanto 8000/160
+transmite 50 paquetes.
+Y su periodo es 1/50 = 20 ms = 0.02 s.
 * ¿Cuántos bits/segundo se envı́an?
+ 64KBIT/S
 [Al terminar el ejercicio es recomendable hacer commit de los ficheros modificados]
 
 12. Vamos a ver más a fondo el intercambio RTP. En Telephony hay una
