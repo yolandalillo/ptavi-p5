@@ -193,7 +193,7 @@ Hasta el paquete 246.
 Se debe al aumento de la delta.
 * ¿Es comparable el cambio en el valor de jitter con el del delta?
 ¿Cual es más grande?
-Si, porque el jitter depende de la deltha.
+Si, porque el jitter depende de la delta.
 
 14. En Telephony selecciona el menú VoIP calls. Verás que se lista la
 llamada de voz IP capturada en una ventana emergente. Selecciona
