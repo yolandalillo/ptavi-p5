@@ -147,6 +147,8 @@ La diferencia es que el campo Proxy-Authorization que aparece en el segundo INVI
 * ¿Qué protocolo(s) se utiliza(n)? ¿Para qué sirven estos protocolos?
 Utiliza RTP que es un protocolo no fiable, que sirve para la transmisión en tiempo real de audio en vídeo, también utiliza
 H.261 que comprime audio y vídeo.
+RTCP es utilizado
+para enviar datos de control entre el emisor y receptor de una secuencia RTP. 
 * ¿Cuál es el tamaño de paquete de los mismos?
 RTP tiene tamaño de 214 bytes sin embargo, H.261 va cambiando.
 * ¿Se utilizan bits de padding?
@@ -196,13 +198,21 @@ Si, porque el jitter depende de la deltha.
 14. En Telephony selecciona el menú VoIP calls. Verás que se lista la
 llamada de voz IP capturada en una ventana emergente. Selecciona
 esa llamada y pulsa el botón Graph.
-* ¿Cuánto dura la conversación?
-* ¿Cuáles son sus SSRC? ¿Por qué hay varios SSRCs? ¿Hay CSRCs?
+* ¿Cuánto dura la conversación? Del segundo 17 al 38
+* ¿Cuáles son sus SSRC? 
+43306582, bf4afd37.
+¿Por qué hay varios SSRCs? 
+Porque hay varios flujos
+¿Hay CSRCs?
+No
 
 15. Identifica la trama donde se finaliza la conversación.
 * ¿Qué método SIP se utiliza?
+El método BYE.
 * ¿En qué trama(s)?
+924, 925, 927, 933.
 * ¿Por qué crees que se envı́a varias veces?
+Para asegurarse de que llega al destino ya que estamos en UDP y no nos asegura que llegue por eso lo envía varias veces.
 
 16. Finalmente, se cierra la aplicación de VozIP.
 * ¿Por qué aparece una instrucción SIP del tipo REGISTER?
