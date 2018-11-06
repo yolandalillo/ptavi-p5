@@ -163,12 +163,19 @@ Y su periodo es 1/50 = 20 ms = 0.02 s.
 12. Vamos a ver más a fondo el intercambio RTP. En Telephony hay una
 opción RTP. Empecemos mirando los flujos RTP.
 * ¿Cuántos flujos hay? ¿por qué?
+Hay dos uno con puerto 5010 y otro con puerto 5014. Porque uno pertenece al audio y otro al vídeo.
 * ¿Cuántos paquetes se pierden?
+No se pierde ninguno, vemos LOST 0.
 * ¿Cuál es el valor máximo del delta? ¿Y qué es lo que significa el
 valor de delta?
+1290.497ms la delta del vídeo, 1290.44ms la delta del audio. La delta es el tiempo que pasa
+entre un paquete y otro.
 * ¿Cuáles son los valores de jitter (medio y máximo)? ¿Qué
 quiere decir eso? ¿Crees que estamos ante una conversación de
 calidad?
+Audio = max jitter 119.635 mean jitter 42.500
+Video = max jitter 183.096 y mean jitter 153.240.
+Es la variación del retardo con el que llegan los paquetes. Debe ser menor de 100 ms.La conversación sí ha sido de calidad ya que el jitter medio del audio es de 42.500ms.
 
 13. Elige un paquete RTP de audio. Analiza el flujo de audio en Telephony
 -> RTP -> Stream Analysis.
