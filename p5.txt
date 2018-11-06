@@ -216,8 +216,12 @@ Para asegurarse de que llega al destino ya que estamos en UDP y no nos asegura q
 
 16. Finalmente, se cierra la aplicación de VozIP.
 * ¿Por qué aparece una instrucción SIP del tipo REGISTER?
+Porque para indicar que el cliente quiere darse de baja, y ser eliminado se tiene que enviar
+un register con EXPIRES a 0.
 * ¿En qué trama sucede esto?
+En la trama 950.
 * ¿En qué se diferencia con la instrucción que se utilizó con anterioridad (al principio de la sesión)?
+En la cabecera EXPIRES que ahora vale 0 en lugar de 3600.
 [Al terminar el ejercicio es recomendable hacer commit de los ficheros modificados]
 
 Captura de una sesión SIP
