@@ -239,7 +239,10 @@ Ekiga para ver todo el proceso3 .
 19. Observa las diferencias en el inicio de la conversación entre el entorno
 del laboratorio y el del ejercicio anterior4 :
 * ¿Se utilizan DNS y STUN? ¿Por qué?
+Vemos que STUN no se usa y DNS aparece pero no interfiere en nuestra conversación. Porque estamos
+utilizando IPs privadas y no públicas.
 * ¿Son diferentes el registro y la descripción de la sesión?
+Sí.
 
 20. Identifica las diferencias existentes entre esta conversación y la conversación anterior:
 * ¿Cuántos flujos tenemos?
